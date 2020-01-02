@@ -15,7 +15,8 @@ import './App.css';
 
 function App() {
   const key = '8f098395e4b8a5cafd82f5af39e50048'
-  const callAPI = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" + key;
+  let locationID =  "524901";
+  const callAPI = `http://api.openweathermap.org/data/2.5/forecast?id=${locationID}&APPID=${key}`;
   // need to get city location from user and convert to id somehow.
 
   function convertToCelcius(num) {
@@ -27,7 +28,9 @@ function App() {
 
   let currentWeather = {
     temp: 30,
-    type: "sunny",
+    humidity: "",
+    wind: "",
+    condition: "sunny",
     // etc etc.
   }
   fetch (callAPI, {mode: 'cors'}) 
@@ -35,14 +38,22 @@ function App() {
       return response.json();
     })
     .then(function (response) {
+      // get data
       const main = response.list[0].main;
-      return main;
+      const condition = response.list[0].weather[0].description;
+      const humidity = response.list[0].main.humidity;
+      const wind = response.list[0].wind.speed
+
+      // set current weather
+      currentWeather.temp = convertToFahrenheit(convertToCelcius(main.temp))
+      currentWeather.condition = condition;
+      currentWeather.humidity = humidity;
+      currentWeather.wind = wind;
+
+      return (currentWeather);
     })
-    .then(function(main) {
-      let converted = convertToCelcius(main.temp)
-      converted = convertToFahrenheit(converted)
-      console.log("It is is ", converted, " degrees and " + currentWeather.type);
-      currentWeather.temp = converted;
+    .then(function(currentWeather) {
+      console.log(currentWeather)
     })
 
   console.log(currentWeather)
