@@ -21,7 +21,6 @@ function App() {
   function convertToCelcius(num) {
     return Math.round(num - 273.15);
   }
-
   function convertToFahrenheit(num) {
     return Math.round(num * 9/5 + 32);
   }
@@ -49,6 +48,7 @@ function App() {
   console.log(currentWeather)
 
   // Ok api call can get temperature, need to grab other relevant data
+    // temp, humidity, wind, clear/cloudy/etc.
   // then set that data to an object
   // then paint that object onto screen ?
   // store object in state in react?
