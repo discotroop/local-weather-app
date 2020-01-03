@@ -4,13 +4,14 @@ Application that allows users to fetch local weather data from anywhere in the w
 
 
 To Do:
-Set api key:
-fetch weather data to the console.
-format it.
-set weather data to screen
 add custom search bar.
-add location service ? 
+    - figure out how to get city IDs ?
+    - add rendering of name of location weather is being displayed for.
+    - add location service ? 
+stylize and walk.
 
+concerns:
+check into why state seems to be taking two clicks to update ??
 
 ...
 set in heroku.... or git pages.
