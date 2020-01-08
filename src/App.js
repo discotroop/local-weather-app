@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { thisExpression } from '@babel/types';
+// import { thisExpression } from '@babel/types';
 
 // tbd 
 // allow flipping between celcius and fahrenheit
@@ -27,7 +27,7 @@ function App() {
       const that = this;
       const key = '8f098395e4b8a5cafd82f5af39e50048'
       let newLocale = document.querySelector("input");
-      let locationID =  "524901";
+      // let locationID =  "524901";
       let city = newLocale.value;
       console.log(city);
       const callAPI = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${key}`;

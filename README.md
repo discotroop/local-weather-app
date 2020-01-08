@@ -2,6 +2,18 @@
 
 Application that allows users to fetch local weather data from anywhere in the world using openweather.org (sp?) api.
 
+MVP: as of 1/8/19
+1. User can enter a city and get up to date weather info.
+    Including:
+    a. temp
+    b. daily low
+    c. daily high
+    d. wind strength
+    e. sky condition (clear, cloudy, rainy, etc.)
+2. Temperatures only display in fahrenheit and there is no button to change
+3. There are no graphics.
+4. User has to click update to update, hitting enter does nothing.
+
 
 To Do:
 add custom search bar.
@@ -11,7 +23,10 @@ add custom search bar.
 stylize and walk.
 
 concerns:
-check into why state seems to be taking two clicks to update ??
+FIXED: check into why state seems to be taking two clicks to update ??
+NEW: add loading icon while waiting
+     add degree symbols
+     add degree switching.
 
 ...
 set in heroku.... or git pages.
